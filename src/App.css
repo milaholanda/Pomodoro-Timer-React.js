@@ -1,0 +1,50 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('../img/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 80vh;
+  margin: 10vh auto;
+  font-family: 'Pacifico', cursive;
+  background-image: url('../img/png-transparent-pomodoro-technique-timer-android-android-food-tomato-fruit-thumbnail-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.clock button {
+  font-family: 'Pacifico', cursive;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 30px;
+  box-shadow: 0px 0px 10px black;
+}
+
+.clock button:hover {
+  box-shadow: 0px 0px 20px black;
+  cursor: pointer;
+}
+
+.clock button:active {
+  padding: 3px 7px;
+  margin: 3px;
+}
+
+.clock h2 {
+  color: white;
+  font-size: 100px;
+  text-shadow: 0px 0px 10px black;
+}
