@@ -4,8 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export default function breakTime() {
     const [breakTime, setBreakTime] = useState(true);
-    const [countdownMin, setCountdownMin] = useState(4);
-    const [countdownSec, setCountdownSec] = useState(55);
+    const [countdownMin, setCountdownMin] = useState(5);
+    const [countdownSec, setCountdownSec] = useState(0);
 
     /* break time */
   useEffect(() => {
@@ -35,9 +35,9 @@ export default function breakTime() {
   if (breakTime) {
     return (
         <div className="breakTime" onClick={stopBreakTime}>
-            <AnimatePresence mode="wait" >
+            <AnimatePresence mode="wait" exit={{ opacity: 0, y:'-50vh'}} >
                 {breakTime && (
-                    <motion.div className='breakBox' onClick={(e) => e.stopPropagation()} exit={{ opacity: 0}} key="modal" initial={{opacity: 0, y: '-50vh'}} animate={{ opacity: 1, y: 0}} transition={{ duration: 1}} >
+                    <motion.div className='breakBox' onClick={(e) => e.stopPropagation()} key="modal" initial={{opacity: 0, y: '-50vh'}} animate={{ opacity: 1, y: 0}} transition={{ duration: 1}} >
                         <h2>{countdownMin.toString().padStart(2, '0')}:{countdownSec.toString().padStart(2, '0')}</h2>
                             <h3>It's time to take a break!</h3>
                             <button onClick={stopBreakTime}> No, thanks!</button>

@@ -4,8 +4,8 @@ import Modal from './components/Modal';
 
 export default function App() {
   /* hooks */
-  const [second, setSecond] = useState(55)
-  const [minute, setMinute] = useState(24)
+  const [second, setSecond] = useState(0)
+  const [minute, setMinute] = useState(0)
   const [run, setRun] = useState(false)
   const [btnText, setBtnText] = useState("Start")
   const [pause, setPause] = useState(false)
