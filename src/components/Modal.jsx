@@ -32,21 +32,17 @@ export default function breakTime() {
   };
 
   /* To render the Break Time window when it's time to take a break. */
-  if (breakTime) {
-    return (
-        <div className="breakTime" onClick={stopBreakTime}>
-            <AnimatePresence mode="wait" exit={{ opacity: 0, y:'-50vh'}} >
-                {breakTime && (
-                    <motion.div className='breakBox' onClick={(e) => e.stopPropagation()} key="modal" initial={{opacity: 0, y: '-50vh'}} animate={{ opacity: 1, y: 0}} transition={{ duration: 1}} >
-                        <h2>{countdownMin.toString().padStart(2, '0')}:{countdownSec.toString().padStart(2, '0')}</h2>
-                            <h3>It's time to take a break!</h3>
-                            <button onClick={stopBreakTime}> No, thanks!</button>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
-    );
-  } else {
-    return (null);
-  }
+  return (
+    <AnimatePresence mode="wait" >
+        {breakTime && (
+            <div className="breakTime" onClick={stopBreakTime}>
+                <motion.div className='breakBox' exit={{ opacity: 0, y:'-50vh'}} onClick={(e) => e.stopPropagation()} key="modal" initial={{opacity: 0, y: '-50vh'}} animate={{ opacity: 1, y: 0}} transition={{ duration: 1}} >
+                    <h2>{countdownMin.toString().padStart(2, '0')}:{countdownSec.toString().padStart(2, '0')}</h2>
+                        <h3>It's time to take a break!</h3>
+                        <button onClick={stopBreakTime}> No, thanks!</button>
+                </motion.div>
+            </div>
+        )}
+    </AnimatePresence>
+    )
 };
