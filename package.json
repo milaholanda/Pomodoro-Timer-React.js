@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "framer-motion": "^9.0.7",
     "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
